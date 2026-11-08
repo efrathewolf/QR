@@ -9,9 +9,9 @@ requirements = python3,kivy==2.3.0,qrcode[pil]==8.2,pillow
 orientation = portrait
 fullscreen = 0
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
-android.api = 35
+android.api = 33
 android.minapi = 23
-android.ndk = 27c
+android.ndk = 25b
 android.archs = arm64-v8a
 android.accept_sdk_license = True
 p4a.branch = v2024.01.21
