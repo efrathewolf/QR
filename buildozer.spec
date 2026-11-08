@@ -12,9 +12,9 @@ android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 android.api = 35
 android.minapi = 23
 android.ndk = 27c
-android.archs = arm64-v8a, armeabi-v7a
+android.archs = arm64-v8a
 android.accept_sdk_license = True
-p4a.branch = develop
+p4a.branch = master
 
 [buildozer]
 log_level = 2
