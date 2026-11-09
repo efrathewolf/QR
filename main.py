@@ -22,6 +22,20 @@ import qrcode
 from qrcode.constants import ERROR_CORRECT_L, ERROR_CORRECT_M, ERROR_CORRECT_Q, ERROR_CORRECT_H
 from PIL import Image
 
+# Compatibilidad entre versiones de Pillow usadas por python-for-android.
+# Algunas dependencias esperan Image.Resampling y otras Image.resampling.
+if not hasattr(Image, "Resampling"):
+    class _Resampling:
+        NEAREST = Image.NEAREST
+        BOX = Image.BOX
+        BILINEAR = Image.BILINEAR
+        HAMMING = getattr(Image, "HAMMING", Image.BILINEAR)
+        BICUBIC = Image.BICUBIC
+        LANCZOS = Image.LANCZOS
+    Image.Resampling = _Resampling
+if not hasattr(Image, "resampling"):
+    Image.resampling = Image.Resampling
+
 try:
     from qrcode.image.styledpil import StyledPilImage
     from qrcode.image.styles.moduledrawers.pil import (SquareModuleDrawer, RoundedModuleDrawer,
